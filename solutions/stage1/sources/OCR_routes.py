@@ -27,6 +27,8 @@ def imgshape():
             pass
             # TODO use opencv (headless) or some better choice to read the image and get its shape
             im = cv2.imread('image.jpg')
+            if im is None:
+                return jsonify({"error": "Cannot open image."}), 500
             height = im.shape[0]
             width = im.shape[1]
             depth = im.shape[2]
