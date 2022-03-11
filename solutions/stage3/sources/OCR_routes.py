@@ -77,6 +77,9 @@ def ocr():
         except Exception as err:
             return jsonify({"error": f"Unknown error: {err}"}), 500
 
+@app.route("/check", methods=["GET"])
+def check():
+    return jsonify("Hello")
 
 if __name__ == "__main__":
     # Simply running this file will start a Flask server in development mode.
