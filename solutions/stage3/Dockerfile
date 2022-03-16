@@ -19,7 +19,7 @@ RUN pip3 install https://github.com/jchazalon/pero-ocr/archive/refs/heads/master
 # ADD https://download.pytorch.org/models/vgg16-397923af.pth /root/.cache/torch/hub/checkpoints/
 ADD pero_eu_cz_print_newspapers_2020-10-09.tar.gz ./
 RUN mv pero_eu_cz_print_newspapers_2020-10-07 pero_config_dir
-COPY weights.pth /root/.cache/torch/hub/checkpoints/vgg16-397923af.pth
+COPY vgg16-397923af.pth /root/.cache/torch/hub/checkpoints/vgg16-397923af.pth
 
 ENV PERO_CONFIG_DIR='/app/pero_config_dir'
 
