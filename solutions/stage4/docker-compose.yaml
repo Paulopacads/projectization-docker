@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  web:
+    container_name: 'stage4-web'
+    build:
+      context: ./sources-web
+      dockerfile: ../Dockerfile-web
+    ports:
+      - "8000:8000"
+  ocr:
+    container_name: 'stage4-engine'
+    build:
+      context: ./sources-ocr
+      dockerfile: ../Dockerfile-ocr
+      args:
+        UID: 1000
+        GID: 1000
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq'
+    ports:
+        - 5672:5672
+        - 15672:15672
+
+networks:
+  rabbitmq_go_net:
+    driver: bridge

@@ -1,0 +1,17 @@
+FROM python:3.7-slim
+
+WORKDIR /app
+
+RUN apt-get update -y && apt-get upgrade -y && apt-get install -y ffmpeg libsm6 libxext6 libglib2.0-0
+COPY requirements.txt .
+
+RUN pip3 install -r requirements.txt
+
+ENV CELERY_BROKER_URL='amqp://guest:guest@rabbitmq:5672/'
+ENV CELERY_RESULT_BACKEND='rpc://'
+
+EXPOSE 8000
+COPY OCR_routes.py app.py
+COPY celeryconfig.py .
+
+CMD ["gunicorn", "-b :8000", "app:app"]
