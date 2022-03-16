@@ -1,5 +1,9 @@
 # projectization-docker
 
+Students:
+- `paul.galand`
+- `temano.frogier`
+
 ## TODO BEFORE LAUNCH STAGE 3
 
 Saying you are in `solutions/stage3`
