@@ -16,11 +16,10 @@ services:
         UID: 1000
         GID: 1000
   rabbitmq:
-    image: rabbitmq:3-management-alpine
+    image: rabbitmq:3-alpine
     container_name: 'rabbitmq'
     ports:
         - 5672:5672
-        - 15672:15672
 
 networks:
   rabbitmq_go_net:
