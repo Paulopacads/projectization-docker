@@ -4,8 +4,8 @@ Students:
 - `paul.galand`
 - `temano.frogier`
 
-Dockerization of an OCR for DEVI course at EPITA.
-The goal is to dockerize a Python server to do character recognition.
+Dockerization of an OCR for DEVI course at EPITA.\
+The goal is to dockerize a Python server to do character recognition.\
 Stage 4 is the most advanced docker setup. You can follow the following steps to run my project.
 
 **Python scripts are mainly (if not entirely) written by teacher [Joseph Chazalon](https://github.com/jchazalon).**
@@ -25,9 +25,9 @@ docker-compose up
 
 ### Expected behaviour
 
-Method: POST
-Path: imgshape
-Goal: get depth, height and width of an image
+Method: POST\
+Path: `imgshape`\
+Goal: get depth, height and width of a given image\
 Needed: jpg file
 
 Use example:
@@ -77,9 +77,9 @@ Saying you are in `solutions/stage3`:
 
 ### Expected behaviour
 
-Method: GET
-Path: check
-Goal: check if server is running
+Method: GET\
+Path: `check`\
+Goal: check if server is running\
 Needed:
 
 Use example:
@@ -90,9 +90,9 @@ Hello
 
 ---
 
-Method: POST
-Path: ocr
-Goal: run ocr on a given image
+Method: POST\
+Path: `ocr`\
+Goal: run ocr on a given image\
 Needed: jpg image
 
 Use example:
@@ -107,7 +107,7 @@ $ curl -X POST --header "Content-type: image/jpeg" --url http://localhost:8000/o
 
 ### Goal
 
-Running an asynchronous OCR and a web server with task queuing on port 8000 on host machine using Celery.
+Running an asynchronous OCR and a web server with task queuing on port 8000 on host machine using Celery.\
 You should expect three different services running:
 - ocr server
 - web server
@@ -125,9 +125,9 @@ Saying you are in `solutions/stage4`:
 
 ### Expected behaviour
 
-Method: GET
-Path: check
-Goal: check if server is running
+Method: GET\
+Path: `check`\
+Goal: check if server is running\
 Needed:
 
 Use example:
@@ -138,9 +138,9 @@ Hello
 
 ---
 
-Method: POST
-Path: ocr
-Goal: run ocr on a given image
+Method: POST\
+Path: `ocr`\
+Goal: run ocr on a given image\
 Needed: jpg image
 
 Use example:
@@ -153,9 +153,9 @@ $ curl -X POST --header "Content-type: image/jpeg" --url http://localhost:8000/o
 
 ---
 
-Method: GET
-Path: `results/{UUID}`
-Goal: get result of a given task id
+Method: GET\
+Path: `results/{UUID}`\
+Goal: get result of a given task id\
 Needed:
 
 Use example:
